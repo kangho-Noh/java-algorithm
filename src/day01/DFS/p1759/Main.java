@@ -11,7 +11,7 @@ public class Main {
 
 	static int L, C;
 	static char[] arr;
-	static StringBuffer ans = new StringBuffer();
+	static StringBuilder ans = new StringBuilder();
 
 	public static void main(String[] args) throws IOException {
 
