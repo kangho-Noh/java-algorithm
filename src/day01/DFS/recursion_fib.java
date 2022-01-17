@@ -1,4 +1,4 @@
-package day1;
+package day01.DFS;
 
 public class recursion_fib {
 	public static void main(String[] args) {
