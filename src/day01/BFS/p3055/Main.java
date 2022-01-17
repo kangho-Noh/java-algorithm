@@ -93,8 +93,8 @@ public class Main {
 				int y = pair.y;
 				int x = pair.x;
 				for (int i = 0; i < 4; i++) {
-					int nexty = y + dy[i];
-					int nextx = x + dx[i];
+					int nexty = y + DY[i];
+					int nextx = x + DX[i];
 					if (nexty < 0 || nextx < 0 || nexty >= R || nextx >= C)
 						continue;
 					if (arr[nexty][nextx] != '.')
@@ -106,8 +106,8 @@ public class Main {
 				int y = pair.y;
 				int x = pair.x;
 				for (int i = 0; i < 4; i++) {
-					int nexty = y + dy[i];
-					int nextx = x + dx[i];
+					int nexty = y + DY[i];
+					int nextx = x + DX[i];
 					if (nexty < 0 || nextx < 0 || nexty >= R || nextx >= C)
 						continue;
 					if (arr[nexty][nextx] != '.' && arr[nexty][nextx] != 'D')
