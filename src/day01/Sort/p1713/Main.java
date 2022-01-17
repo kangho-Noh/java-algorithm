@@ -1,4 +1,4 @@
-package day01.Implementation.p1713;
+package day01.Sort.p1713;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
