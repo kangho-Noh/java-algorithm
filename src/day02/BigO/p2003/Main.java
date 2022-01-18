@@ -2,6 +2,7 @@ package day02.BigO.p2003;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -16,11 +17,15 @@ public class Main {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 
-		int[] arr = new int[N];
-		st = new StringTokenizer(br.readLine());
-		for (int i = 0; i < N; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
-		}
+		//int[] arr = new int[N];
+		//st = new StringTokenizer(br.readLine());
+		// for (int i = 0; i < N; i++) {
+		// 	arr[i] = Integer.parseInt(st.nextToken());
+		// }
+		//윗줄을 아래 한줄로 만들 수 있음.
+		int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+
+
 
 		int low = 0, high = 0;
 
