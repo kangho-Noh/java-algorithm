@@ -1,8 +1,7 @@
-package day02.subtotal.p1806;
+package day02.SlidingWindow.p1806;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {

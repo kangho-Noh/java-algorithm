@@ -1,4 +1,4 @@
-package day02.BigO.p2003;
+package day02.SlidingWindow.p2003;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
