@@ -1,4 +1,4 @@
-package day02.SlidingWindow.p1806;
+package day02.SlidingWindowTwoPointer.p1806;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
