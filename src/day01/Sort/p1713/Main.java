@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		//
-		System.setIn(new FileInputStream("src/day01/Implementation/p1713/input2.txt"));
+		System.setIn(new FileInputStream("src/day01/Implementation/p1713/input1.txt"));
 		//
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

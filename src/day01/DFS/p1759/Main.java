@@ -18,7 +18,7 @@ public class Main {
 		//입력 간편하게 받는 방법
 		// System.in을 파일로 변경하는 것임.
 		// 제출할 때는 이 줄만 지워서 제출
-		System.setIn(new FileInputStream("src/day01/DFS/p1759/input.txt"));
+		System.setIn(new FileInputStream("src/day01/DFS/p1759/input2.txt"));
 
 		//입력 및 초기화
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

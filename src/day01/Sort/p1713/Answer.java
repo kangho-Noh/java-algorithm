@@ -15,7 +15,7 @@ public class Answer {
 	public static void main(String[] args) throws Exception {
 
 		//
-		System.setIn(new FileInputStream("src/day01/Sort/p1713/input2.txt"));
+		System.setIn(new FileInputStream("src/day01/Sort/p1713/input1.txt"));
 		//
 		Scanner sc = new Scanner(System.in);
 

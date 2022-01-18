@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		//
-		System.setIn(new FileInputStream("src/day01/BinarySearch/p1920/input.txt"));
+		System.setIn(new FileInputStream("src/day01/BinarySearch/p1920/input2.txt"));
 		//
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
