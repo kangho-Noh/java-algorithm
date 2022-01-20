@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 public class Main {
 	static final int[] DY = {-1, -1, 0, 1, 1, 1, 0, -1};
 	static final int[] DX = {0, 1, 1, 1, 0, -1, -1, -1};
+	static final int[] score = {0, 0, 0, 1, 1, 2, 3, 5, 11};
 
 	static StringTokenizer st;
 	static BufferedReader br;
@@ -80,22 +81,10 @@ public class Main {
 		if (node.isEnd && !node.isHit) {
 			node.isHit = true;
 			findCount++;
-			if (3 <= depth && depth < 5) {
-				maxScore += 1;
-			} else if (depth == 5) {
-				maxScore += 2;
-			} else if (depth == 6) {
-				maxScore += 3;
-			} else if (depth == 7) {
-				maxScore += 5;
-			} else if (depth == 8) {
-				maxScore += 11;
-			}
+			maxScore += score[sb.length()];
 			String s = sb.toString();
-			if (longestAnswer.equals("")||longestAnswer.length() < s.length()) {
-				longestAnswer =s;
-			}
-			else if (longestAnswer.length() == s.length() && s.compareTo(longestAnswer) < 0) {
+
+			if(compare(longestAnswer, s) <0){
 				longestAnswer = s;
 			}
 		}
@@ -115,6 +104,15 @@ public class Main {
 			}
 		}
 		visited[y][x] = false;
+	}
+
+	private static int compare(String s1, String s2) {
+		int result = Integer.compare(s1.length(), s2.length());
+		if (result == 0) {
+			return s2.compareTo(s1);
+		} else {
+			return result;
+		}
 	}
 }
 
