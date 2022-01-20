@@ -72,14 +72,7 @@ public class Main {
 	}
 
 	public static int gcd(int a, int b) {
-		int tmp, r;
-
-		if (a < b) {
-			tmp = a;
-			a = b;
-			b = tmp;
-		}
-
+		int r;
 		while (b != 0) {
 			r = a % b;
 			a = b;
