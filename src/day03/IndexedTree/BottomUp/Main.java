@@ -2,9 +2,10 @@ package day03.IndexedTree.BottomUp;
 
 public class Main {
 
-	static int N,M,K,S;
+	static int N, M, K, S;
 	static long[] nums;
 	static long[] tree;
+
 	public static void main(String[] args) throws Exception {
 
 	}
@@ -12,7 +13,7 @@ public class Main {
 	static void initBU() {
 		//Leaf에 값 반영
 		for (int i = 0; i < N; i++) {
-			tree[S+i] = nums[i+1];
+			tree[S + i] = nums[i + 1];
 		}
 		//내부 노드 채움
 		for (int i = 1; i < S; i++) {
@@ -53,6 +54,14 @@ public class Main {
 		while (node > 0) {
 			tree[node] = tree[node * 2] + tree[node * 2 + 1];
 			node /= 2;
+		}
+	}
+
+	static void update(int node, int diff) {
+		int idx = node + S - 1;
+		while (idx > 0) {
+			tree[idx] += diff;
+			idx /= 2;
 		}
 	}
 }
