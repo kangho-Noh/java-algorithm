@@ -1,4 +1,4 @@
-package day06.DisjointSet.p1516;
+package day06.DAG.p1516;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
