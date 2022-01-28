@@ -1,4 +1,4 @@
-package day03.IndexedTree.p7578;
+package day03.IndexedTree.p7578_공장;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,7 +20,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		//
-		System.setIn(new FileInputStream("src/day03/IndexedTree/p7578/input.txt"));
+		System.setIn(new FileInputStream("src/day03/IndexedTree/p7578_공장/input.txt"));
 		//
 		br = new BufferedReader(new InputStreamReader(System.in));
 		bw = new BufferedWriter(new OutputStreamWriter(System.out));
