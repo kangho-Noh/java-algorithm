@@ -1,4 +1,4 @@
-package day01.Stack.p3425;
+package day03.Stack.p3425;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
