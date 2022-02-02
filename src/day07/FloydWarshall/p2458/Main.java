@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -13,7 +12,6 @@ public class Main {
 	static BufferedReader br;
 	static BufferedWriter bw;
 
-	static final int INF = Integer.MAX_VALUE;
 	static int N, M;
 
 	public static void main(String[] args) throws Exception {
@@ -27,17 +25,12 @@ public class Main {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 
-		ArrayList<Integer>[] adj = new ArrayList[N + 1];
-		for (int i = 0; i < N + 1; i++) {
-			adj[i] = new ArrayList<>();
-		}
 		int[][] edge = new int[N + 1][N + 1];
 		for (int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
 			//작 -> 큰
-			adj[a].add(b);
 			edge[a][b] = 1;
 		}
 		for (int i = 0; i < N + 1; i++) {
