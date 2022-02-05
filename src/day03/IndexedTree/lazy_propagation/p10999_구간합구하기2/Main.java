@@ -91,16 +91,16 @@ public class Main {
 			tree[now] += diff * (right - left + 1);
 
 			if (left != right) {
-				lazy[now*2] +=diff;
-				lazy[now*2+1] += diff;
+				lazy[now * 2] += diff;
+				lazy[now * 2 + 1] += diff;
 			}
 			return;
 		}
 		//범위가 한쪽이 걸친 상태면 자식 노드 업데이트 후 현재 노드에 반영
-		int mid = (left+right)/2;
+		int mid = (left + right) / 2;
 		update(left, mid, now * 2, tLeft, tRight, diff);
 		update(mid + 1, right, now * 2 + 1, tLeft, tRight, diff);
-		tree[now] = tree[now*2] + tree[now*2+1];
+		tree[now] = tree[now * 2] + tree[now * 2 + 1];
 	}
 
 	private static long query(int left, int right, int now, int qleft, int qright) {
