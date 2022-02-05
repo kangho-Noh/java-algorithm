@@ -25,7 +25,7 @@ public class Main {
 		st = new StringTokenizer(br.readLine());
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-		Edge[] edges = new Edge[M];
+		Edge[] edges = new Edge[M]; //간선리스트
 		for (int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
