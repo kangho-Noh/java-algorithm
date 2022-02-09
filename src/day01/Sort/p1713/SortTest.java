@@ -19,20 +19,20 @@ public class SortTest {
 
 		System.out.println("list = " + list);
 
-		Collections.sort(list); //@Override한 compareTo에 의해
+		// 1. @Override한 compareTo에 의해
+		Collections.sort(list);
 
 		System.out.println("list = " + list);
 
-		Collections.sort(list, new Comparator<Item>() {
-			@Override
-			public int compare(Item o1, Item o2) {
-				return Integer.compare(o1.c, o2.c);
-			}
-		});
+		// 2. Comparator.comparing 함수에 의해
+		Collections.sort(list, Comparator.comparingInt(o -> o.c));
 
 		System.out.println("list = " + list);
 
-		Collections.sort(list, Comparator.comparing(Item::getB).reversed().thenComparing(Item::getA)); //getter를 사용하여 소팅
+		// 3. getter를 사용하여 소팅
+		Collections.sort(list,
+			Comparator.comparing(Item::getB).reversed().thenComparing(Item::getA));
+
 		System.out.println("list = " + list);
 
 	}
