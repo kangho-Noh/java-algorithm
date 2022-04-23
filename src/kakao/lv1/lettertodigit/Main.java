@@ -1,4 +1,4 @@
-package kakao;
+package kakao.lv1.lettertodigit;
 
 public class Main {
 	//one two three four five six seven eight nine zero
