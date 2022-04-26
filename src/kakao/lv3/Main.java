@@ -8,6 +8,7 @@ class Solution {
 	static int cursor;
 	static int lastIndex;
 	static int size;
+	static int[] next, prev;
 	static StringBuilder answer;
 	static Stack<Integer> trashcan;
 
@@ -20,6 +21,12 @@ class Solution {
 		trashcan = new Stack<>();
 		lastIndex = n - 1;
 		size = n;
+		next = new int[n];
+		prev = new int[n];
+		for (int i = 0; i < n; i++) {
+			next[i] = i + 1; //if next[i]==n이면 lastindex
+			prev[i] = i - 1; //if prev[i]==-1이면 Lastindex
+		}
 
 		Arrays.stream(cmd).forEach(this::commandController);
 
@@ -41,65 +48,41 @@ class Solution {
 
 	//커서를 위로 올림 (index--)
 	private void cursorUp(int n) {
-		int moved = 0;
-		while (moved != n) {
-			cursor--;
-			if (cursor < 0) {
-				cursor = 0;
-				break;
-			}
-			char now = answer.charAt(cursor);
-			if (now == 'O') {
-				moved++;
-			}
+		for (int i = 0; i < n; i++) {
+			cursor = prev[cursor];
 		}
 	}
 
 	//커서를 아래로 내림 (index++)
 	private void cursorDown(int n) {
-		int moved = 0;
-		while (moved != n) {
-			cursor++;
-			if (cursor >= lastIndex) {
-				cursor = lastIndex;
-				break;
-			}
-			char now = answer.charAt(cursor);
-			if (now == 'O') {
-				moved++;
-			}
+		for (int i = 0; i < n; i++) {
+			cursor = next[cursor];
 		}
 	}
 
 	private void undo() {
 		//trashcan에서 꺼냄
-		Integer target = trashcan.pop();
+		int target = trashcan.pop();
 		answer.setCharAt(target, 'O');
-		size++;
-		//cursor는 그대로, lastIndex 갱신
-		if (size == 1) {
-			lastIndex = target;
-			cursor = target;
-		} else if (lastIndex < target) {
-			lastIndex = target;
-		}
+		if(prev[target]>=0)
+			next[prev[target]] = target;
+		if(next[target]<size)
+			prev[next[target]] = target;
 	}
 
 	private void delete() {
 		answer.setCharAt(cursor, 'X');
 		trashcan.add(cursor);
-		size--;
-		//만약 마지막 원소면 커서 위로
-		//마지막 원소가 아니면 커서 아래로
-		if (size == 0) {
-			//사이즈 0이면 커서 움직이지 않음.
+		// 주변 next, prev 바꿈
+		if(prev[cursor]>=0)
+			next[prev[cursor]] = next[cursor];
+		if(next[cursor]<size)
+			prev[next[cursor]] = prev[cursor];
+		//삭제 후 커서 내림. 만약에 내릴 수 없으면(마지막 인덱스이면) 올림
+		if (next[cursor] == size) {
+			cursorUp(1);
 		} else {
-			if (cursor == lastIndex) {
-				cursorUp(1);
-				lastIndex = cursor;
-			} else if (cursor != lastIndex) {
-				cursorDown(1);
-			}
+			cursorDown(1);
 		}
 	}
 }
