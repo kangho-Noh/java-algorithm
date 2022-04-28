@@ -1,4 +1,4 @@
-package kakao.lv2;
+package kakao.lv2.거리두기확인하기;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
