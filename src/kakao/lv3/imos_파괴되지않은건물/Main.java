@@ -1,5 +1,6 @@
-package kakao.lv3.파괴되지않은건물;
+package kakao.lv3.imos_파괴되지않은건물;
 
+//imos 알고리즘
 public class Main {
 	public static void main(String[] args) {
 		Solution sol = new Solution();
