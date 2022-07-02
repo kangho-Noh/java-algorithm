@@ -14,6 +14,7 @@ public class Trie {
 			TrieNode nextNode = current.children[s.charAt(i) - 'A'];
 			if (nextNode == null) {
 				nextNode = new TrieNode();
+				current.children[s.charAt(i)-'A'] = nextNode;
 			}
 			current = nextNode;
 		}
